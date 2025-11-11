@@ -1,6 +1,6 @@
 ﻿namespace QuanLyThuVien
 {
-    partial class LichSuMuonTra
+    partial class TraSach
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BTNTIMKIEM = new System.Windows.Forms.ToolStrip();
             this.tssbtnSACH = new System.Windows.Forms.ToolStripSplitButton();
             this.tÌMSÁCHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,17 +56,15 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tHAYĐỔIMẬTKHẨUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tHÔNGTINCÁNHÂNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDSMuon = new System.Windows.Forms.RadioButton();
-            this.btnDSTra = new System.Windows.Forms.RadioButton();
-            this.BangHienThi = new System.Windows.Forms.DataGridView();
-            this.MASACH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSACH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYMUON = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYHENTRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMASACHTENSACH = new System.Windows.Forms.TextBox();
+            this.txtUserKH = new System.Windows.Forms.TextBox();
+            this.btnKiemTraUserKH = new System.Windows.Forms.Button();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.txtKQ = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lbNhapNgayTraThucTe = new System.Windows.Forms.Label();
             this.BTNTIMKIEM.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BangHienThi)).BeginInit();
             this.SuspendLayout();
             // 
             // BTNTIMKIEM
@@ -86,10 +82,9 @@
             this.tsbtnTIMKIEM});
             this.BTNTIMKIEM.Location = new System.Drawing.Point(0, 27);
             this.BTNTIMKIEM.Name = "BTNTIMKIEM";
-            this.BTNTIMKIEM.Size = new System.Drawing.Size(1070, 27);
-            this.BTNTIMKIEM.TabIndex = 4;
+            this.BTNTIMKIEM.Size = new System.Drawing.Size(1058, 27);
+            this.BTNTIMKIEM.TabIndex = 7;
             this.BTNTIMKIEM.Text = "toolStrip1";
-            this.BTNTIMKIEM.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.BTNTIMKIEM_ItemClicked);
             // 
             // tssbtnSACH
             // 
@@ -207,7 +202,6 @@
             this.tsbtnTIMKIEM.Name = "tsbtnTIMKIEM";
             this.tsbtnTIMKIEM.Size = new System.Drawing.Size(114, 24);
             this.tsbtnTIMKIEM.Text = "TÌM KIẾM";
-            this.tsbtnTIMKIEM.Click += new System.EventHandler(this.LichSuMuonTra_Load);
             // 
             // menuStrip
             // 
@@ -219,8 +213,8 @@
             this.mnuTAIKHOAN});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1070, 27);
-            this.menuStrip.TabIndex = 3;
+            this.menuStrip.Size = new System.Drawing.Size(1058, 27);
+            this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip1";
             // 
             // mnuTRANGCHU
@@ -300,134 +294,119 @@
             this.tHÔNGTINCÁNHÂNToolStripMenuItem.Size = new System.Drawing.Size(265, 26);
             this.tHÔNGTINCÁNHÂNToolStripMenuItem.Text = "THÔNG TIN CÁ NHÂN";
             // 
-            // btnDSMuon
+            // txtMASACHTENSACH
             // 
-            this.btnDSMuon.AutoSize = true;
-            this.btnDSMuon.Location = new System.Drawing.Point(12, 57);
-            this.btnDSMuon.Name = "btnDSMuon";
-            this.btnDSMuon.Size = new System.Drawing.Size(128, 20);
-            this.btnDSMuon.TabIndex = 5;
-            this.btnDSMuon.Text = "Danh sách mượn";
-            this.btnDSMuon.UseVisualStyleBackColor = true;
-            this.btnDSMuon.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.txtMASACHTENSACH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMASACHTENSACH.Location = new System.Drawing.Point(258, 73);
+            this.txtMASACHTENSACH.Name = "txtMASACHTENSACH";
+            this.txtMASACHTENSACH.Size = new System.Drawing.Size(509, 34);
+            this.txtMASACHTENSACH.TabIndex = 8;
+            this.txtMASACHTENSACH.Text = "Nhập mã sách hoặc tên sách";
             // 
-            // btnDSTra
+            // txtUserKH
             // 
-            this.btnDSTra.AutoSize = true;
-            this.btnDSTra.Location = new System.Drawing.Point(146, 57);
-            this.btnDSTra.Name = "btnDSTra";
-            this.btnDSTra.Size = new System.Drawing.Size(110, 20);
-            this.btnDSTra.TabIndex = 6;
-            this.btnDSTra.Text = "Danh sách trả";
-            this.btnDSTra.UseVisualStyleBackColor = true;
+            this.txtUserKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserKH.Location = new System.Drawing.Point(258, 132);
+            this.txtUserKH.Name = "txtUserKH";
+            this.txtUserKH.Size = new System.Drawing.Size(509, 34);
+            this.txtUserKH.TabIndex = 9;
+            this.txtUserKH.Text = "Nhập username khách hàng";
             // 
-            // BangHienThi
+            // btnKiemTraUserKH
             // 
-            this.BangHienThi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.BangHienThi.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.BangHienThi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BangHienThi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.BangHienThi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BangHienThi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MASACH,
-            this.TENSACH,
-            this.MAKH,
-            this.NGAYMUON,
-            this.NGAYHENTRA});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.BangHienThi.DefaultCellStyle = dataGridViewCellStyle2;
-            this.BangHienThi.EnableHeadersVisualStyles = false;
-            this.BangHienThi.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BangHienThi.Location = new System.Drawing.Point(0, 83);
-            this.BangHienThi.Name = "BangHienThi";
-            this.BangHienThi.ReadOnly = true;
-            this.BangHienThi.RowHeadersWidth = 51;
-            this.BangHienThi.RowTemplate.Height = 24;
-            this.BangHienThi.Size = new System.Drawing.Size(1070, 366);
-            this.BangHienThi.TabIndex = 7;
+            this.btnKiemTraUserKH.BackColor = System.Drawing.Color.White;
+            this.btnKiemTraUserKH.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnKiemTraUserKH.FlatAppearance.BorderSize = 2;
+            this.btnKiemTraUserKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKiemTraUserKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKiemTraUserKH.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnKiemTraUserKH.Location = new System.Drawing.Point(417, 184);
+            this.btnKiemTraUserKH.Name = "btnKiemTraUserKH";
+            this.btnKiemTraUserKH.Size = new System.Drawing.Size(168, 37);
+            this.btnKiemTraUserKH.TabIndex = 10;
+            this.btnKiemTraUserKH.Text = "Kiểm tra ";
+            this.btnKiemTraUserKH.UseVisualStyleBackColor = false;
             // 
-            // MASACH
+            // btnXacNhan
             // 
-            this.MASACH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.MASACH.HeaderText = "Mã sách";
-            this.MASACH.MinimumWidth = 6;
-            this.MASACH.Name = "MASACH";
-            this.MASACH.ReadOnly = true;
-            this.MASACH.Width = 125;
+            this.btnXacNhan.BackColor = System.Drawing.Color.White;
+            this.btnXacNhan.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnXacNhan.FlatAppearance.BorderSize = 2;
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.ForeColor = System.Drawing.Color.Red;
+            this.btnXacNhan.Location = new System.Drawing.Point(417, 427);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(168, 46);
+            this.btnXacNhan.TabIndex = 12;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = false;
             // 
-            // TENSACH
+            // txtKQ
             // 
-            this.TENSACH.HeaderText = "Tên sách";
-            this.TENSACH.MinimumWidth = 6;
-            this.TENSACH.Name = "TENSACH";
-            this.TENSACH.ReadOnly = true;
+            this.txtKQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKQ.Location = new System.Drawing.Point(258, 238);
+            this.txtKQ.Multiline = true;
+            this.txtKQ.Name = "txtKQ";
+            this.txtKQ.ReadOnly = true;
+            this.txtKQ.Size = new System.Drawing.Size(509, 105);
+            this.txtKQ.TabIndex = 13;
+            this.txtKQ.TextChanged += new System.EventHandler(this.txtKQ_TextChanged);
             // 
-            // MAKH
+            // dateTimePicker1
             // 
-            this.MAKH.HeaderText = "Mã khách hàng";
-            this.MAKH.MinimumWidth = 6;
-            this.MAKH.Name = "MAKH";
-            this.MAKH.ReadOnly = true;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(502, 368);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(265, 30);
+            this.dateTimePicker1.TabIndex = 14;
             // 
-            // NGAYMUON
+            // lbNhapNgayTraThucTe
             // 
-            this.NGAYMUON.HeaderText = "Ngày mượn";
-            this.NGAYMUON.MinimumWidth = 6;
-            this.NGAYMUON.Name = "NGAYMUON";
-            this.NGAYMUON.ReadOnly = true;
+            this.lbNhapNgayTraThucTe.AutoSize = true;
+            this.lbNhapNgayTraThucTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNhapNgayTraThucTe.Location = new System.Drawing.Point(253, 368);
+            this.lbNhapNgayTraThucTe.Name = "lbNhapNgayTraThucTe";
+            this.lbNhapNgayTraThucTe.Size = new System.Drawing.Size(243, 29);
+            this.lbNhapNgayTraThucTe.TabIndex = 15;
+            this.lbNhapNgayTraThucTe.Text = "Nhập ngày trả thực tế:";
             // 
-            // NGAYHENTRA
-            // 
-            this.NGAYHENTRA.HeaderText = "Ngày hẹn trả";
-            this.NGAYHENTRA.MinimumWidth = 6;
-            this.NGAYHENTRA.Name = "NGAYHENTRA";
-            this.NGAYHENTRA.ReadOnly = true;
-            // 
-            // LichSuMuonTra
+            // TraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1070, 450);
-            this.Controls.Add(this.BangHienThi);
-            this.Controls.Add(this.btnDSTra);
-            this.Controls.Add(this.btnDSMuon);
+            this.ClientSize = new System.Drawing.Size(1058, 499);
+            this.Controls.Add(this.lbNhapNgayTraThucTe);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.txtKQ);
+            this.Controls.Add(this.btnXacNhan);
+            this.Controls.Add(this.btnKiemTraUserKH);
+            this.Controls.Add(this.txtUserKH);
+            this.Controls.Add(this.txtMASACHTENSACH);
             this.Controls.Add(this.BTNTIMKIEM);
             this.Controls.Add(this.menuStrip);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "LichSuMuonTra";
-            this.Text = "LichSuMuonTra";
-            this.Load += new System.EventHandler(this.LichSuMuonTra_Load);
+            this.Name = "TraSach";
+            this.Text = "Trả sách";
+            this.Load += new System.EventHandler(this.TraSach_Load);
             this.BTNTIMKIEM.ResumeLayout(false);
             this.BTNTIMKIEM.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BangHienThi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
         private System.Windows.Forms.ToolStrip BTNTIMKIEM;
         private System.Windows.Forms.ToolStripSplitButton tssbtnSACH;
         private System.Windows.Forms.ToolStripMenuItem tÌMSÁCHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SOLUONGSACHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem VITRISACHToolStripMenuItem;
         private System.Windows.Forms.ToolStripSplitButton tssbtnTACGIA;
         private System.Windows.Forms.ToolStripMenuItem tÌMTÁCGIẢToolStripMenuItem;
         private System.Windows.Forms.ToolStripSplitButton tssbtnNHAXUATBAN;
@@ -450,15 +429,13 @@
         private System.Windows.Forms.ToolStripMenuItem đĂNGXUẤTToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tHAYĐỔIMẬTKHẨUToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem VITRISACHToolStripMenuItem;
-        private System.Windows.Forms.RadioButton btnDSMuon;
-        private System.Windows.Forms.RadioButton btnDSTra;
-        private System.Windows.Forms.DataGridView BangHienThi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MASACH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENSACH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYMUON;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYHENTRA;
         private System.Windows.Forms.ToolStripMenuItem tHÔNGTINCÁNHÂNToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtMASACHTENSACH;
+        private System.Windows.Forms.TextBox txtUserKH;
+        private System.Windows.Forms.Button btnKiemTraUserKH;
+        private System.Windows.Forms.Button btnXacNhan;
+        private System.Windows.Forms.TextBox txtKQ;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lbNhapNgayTraThucTe;
     }
 }
