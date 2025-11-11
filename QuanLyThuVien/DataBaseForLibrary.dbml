@@ -1,1 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataBaseForLibrary" Class="DataBaseForLibraryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataBaseForLibrary" Class="DataBaseForLibraryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.DanhSachMuon" Member="DanhSachMuons">
+    <Type Name="DanhSachMuon">
+      <Column Name="MaSach" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserNameKhachHang" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NgayHenTra" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTraThucTe" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="KhachHang_DanhSachMuon" Member="KhachHang" ThisKey="UserNameKhachHang" OtherKey="UserName" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="Sach_DanhSachMuon" Member="Sach" ThisKey="MaSach" OtherKey="MaSach" Type="Sach" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vip" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CCCD" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SachDaXem" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Pass" Type="System.Data.Linq.Binary" DbType="VarBinary(64) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="KhachHang_DanhSachMuon" Member="DanhSachMuons" ThisKey="UserName" OtherKey="UserNameKhachHang" Type="DanhSachMuon" />
+      <Association Name="Sach_KhachHang" Member="Sach" ThisKey="SachDaXem" OtherKey="MaSach" Type="Sach" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="MANV" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MANQL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NgayNhanChuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_NhanVien" Member="NhanViens" ThisKey="MANV" OtherKey="MANQL" Type="NhanVien" />
+      <Association Name="NhanVien_NhanVien" Member="NhanVien1" ThisKey="MANQL" OtherKey="MANV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sach" Member="Saches">
+    <Type Name="Sach">
+      <Column Name="MaSach" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TheLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DoTuoi" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NhaXuatBan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhanTramGiam" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="GiaGoc" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="GiaHienTai" Type="System.Decimal" DbType="Decimal(18,7)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TonKho" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="Sach_DanhSachMuon" Member="DanhSachMuons" ThisKey="MaSach" OtherKey="MaSach" Type="DanhSachMuon" />
+      <Association Name="Sach_KhachHang" Member="KhachHangs" ThisKey="MaSach" OtherKey="SachDaXem" Type="KhachHang" />
+      <Association Name="Sach_ViTri" Member="ViTri" ThisKey="MaSach" OtherKey="MaSach" Type="ViTri" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViTri" Member="ViTris">
+    <Type Name="ViTri">
+      <Column Name="MaKe" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DiaDiem" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Sach_ViTri" Member="Sach" ThisKey="MaSach" OtherKey="MaSach" Type="Sach" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
