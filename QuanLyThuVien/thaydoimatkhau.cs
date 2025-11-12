@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace QuanLyThuVien
 {
-    public partial class Form1 : Form
+    public partial class thaydoimatkhau : Form
     {
-        public Form1()
+        public thaydoimatkhau()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPwd2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

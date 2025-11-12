@@ -30,5 +30,40 @@ namespace QuanLyThuVien
         {
 
         }
+
+        private void lbNgayHenTra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbNhapNgayMuon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbTrangThai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKiemTraUserKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbTonKho_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MuonSach_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

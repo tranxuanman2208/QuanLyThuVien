@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace QuanLyThuVien
 {
-    public partial class SachTheoTenTacGia : Form
+    public partial class trangchu : Form
     {
-        public SachTheoTenTacGia()
+        public trangchu()
         {
             InitializeComponent();
         }
 
-        private void txtTenTG_TextChanged(object sender, EventArgs e)
+        private void trangchu_Load(object sender, EventArgs e)
         {
 
         }
