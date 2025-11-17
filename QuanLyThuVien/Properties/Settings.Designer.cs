@@ -44,5 +44,16 @@ namespace QuanLyThuVien.Properties {
                 return ((string)(this["DataBaseForLibraryConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TRANMAN\\MSSQLSERVER02;Initial Catalog=DataBaseForLibrary;Persist Secu" +
+            "rity Info=True;User ID=sa;Encrypt=True;TrustServerCertificate=True")]
+        public string DataBaseForLibraryConnectionString2 {
+            get {
+                return ((string)(this["DataBaseForLibraryConnectionString2"]));
+            }
+        }
     }
 }

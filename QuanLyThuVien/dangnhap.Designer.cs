@@ -1,6 +1,6 @@
 ﻿namespace QuanLyThuVien
 {
-    partial class dangnhap
+    partial class DangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,14 @@
             this.btnok = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnHienMatKhau = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnHienMatKhau);
             this.groupBox1.Controls.Add(this.btndong);
             this.groupBox1.Controls.Add(this.txtmatkhau);
             this.groupBox1.Controls.Add(this.txtdangnhap);
@@ -48,38 +50,39 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(-2, 1);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(-3, 1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(507, 286);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(534, 286);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ĐĂNG NHẬP";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btndong
             // 
             this.btndong.Location = new System.Drawing.Point(257, 164);
-            this.btndong.Margin = new System.Windows.Forms.Padding(4);
+            this.btndong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btndong.Name = "btndong";
             this.btndong.Size = new System.Drawing.Size(133, 62);
             this.btndong.TabIndex = 9;
             this.btndong.Text = "ĐÓNG";
             this.btndong.UseVisualStyleBackColor = true;
+            this.btndong.Click += new System.EventHandler(this.btndong_Click);
             // 
             // txtmatkhau
             // 
             this.txtmatkhau.Location = new System.Drawing.Point(196, 95);
-            this.txtmatkhau.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmatkhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtmatkhau.Name = "txtmatkhau";
             this.txtmatkhau.Size = new System.Drawing.Size(265, 23);
             this.txtmatkhau.TabIndex = 8;
+            this.txtmatkhau.UseSystemPasswordChar = true;
             // 
             // txtdangnhap
             // 
             this.txtdangnhap.Location = new System.Drawing.Point(196, 60);
-            this.txtdangnhap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtdangnhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtdangnhap.Name = "txtdangnhap";
             this.txtdangnhap.Size = new System.Drawing.Size(265, 23);
             this.txtdangnhap.TabIndex = 7;
@@ -87,12 +90,13 @@
             // btnok
             // 
             this.btnok.Location = new System.Drawing.Point(116, 164);
-            this.btnok.Margin = new System.Windows.Forms.Padding(4);
+            this.btnok.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnok.Name = "btnok";
             this.btnok.Size = new System.Drawing.Size(133, 62);
             this.btnok.TabIndex = 5;
             this.btnok.Text = "ĐĂNG NHẬP";
             this.btnok.UseVisualStyleBackColor = true;
+            this.btnok.Click += new System.EventHandler(this.btnok_Click);
             // 
             // label2
             // 
@@ -114,19 +118,32 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "TÊN ĐĂNG NHẬP: ";
             // 
-            // dangnhap
+            // btnHienMatKhau
+            // 
+            this.btnHienMatKhau.AutoSize = true;
+            this.btnHienMatKhau.Location = new System.Drawing.Point(196, 125);
+            this.btnHienMatKhau.Name = "btnHienMatKhau";
+            this.btnHienMatKhau.Size = new System.Drawing.Size(123, 21);
+            this.btnHienMatKhau.TabIndex = 10;
+            this.btnHienMatKhau.Text = "Hiện mật khẩu";
+            this.btnHienMatKhau.UseVisualStyleBackColor = true;
+            this.btnHienMatKhau.CheckedChanged += new System.EventHandler(this.btnHienMatKhau_CheckedChanged);
+            // 
+            // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(507, 283);
+            this.ClientSize = new System.Drawing.Size(532, 283);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "dangnhap";
-            this.Text = "dangnhap";
+            this.Name = "DangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ĐĂNG NHẬP";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,5 +159,6 @@
         private System.Windows.Forms.Button btnok;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox btnHienMatKhau;
     }
 }
